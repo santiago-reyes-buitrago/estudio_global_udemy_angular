@@ -22,7 +22,8 @@ export class ProductServiceData {
 
   }
 
-  getProduct(){
+  getProduct(id:number){
+    return this.http.get<{[llave:string]: Producto}>(this.url + 'datos.json');
 
   }
   putProducts(){
