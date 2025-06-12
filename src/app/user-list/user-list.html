@@ -1,0 +1,11 @@
+<div class="rpw justify-content-center">
+  <div class="col-md-6">
+    @if (usuarios.length > 0) {
+      @for (usuario of usuarios; track usuario.id){
+        <li class="list-group">{{usuario.id}} - {{usuario.name}}</li>
+      }
+    } @else {
+      <li class="list-group-item">No hay usuarios disponibles</li>
+    }
+  </div>
+</div>

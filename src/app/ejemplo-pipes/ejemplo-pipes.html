@@ -1,0 +1,18 @@
+<div class="container my-4">
+  <h3 class="text-center text-primary">
+    Lista de Empleados
+  </h3>
+  <ul class="list-group w-50 mx-auto">
+    @for (empleado of empleados;track empleado){
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <h5 class="mb-1">{{empleado.nombre | uppercase}}</h5>
+        <small class="text-muted">
+          Fecha de Nacimiento: {{empleado.fechaNacimiento | date:'longDate'}}
+        </small>
+        <span class="badge bg-success">
+          {{empleado.sueldo | currency:'COP'}}
+        </span>
+      </li>
+    }
+  </ul>
+</div>

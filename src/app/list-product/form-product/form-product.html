@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center mb-2">
+  <input class="form-control border-1 border-black" #nameProduct>
+  <input class="form-control border-1 border-black" #priceProduct>
+  <button (click)="calculatedata({name: nameProduct.value,price:Number(priceProduct.value),quantity: 1});nameProduct.value=''; priceProduct.value=''"  class="btn w-100 btn-primary"
+  >Agregar Producto</button>
+</div>

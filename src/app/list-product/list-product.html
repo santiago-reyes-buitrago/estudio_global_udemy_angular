@@ -1,0 +1,13 @@
+<div>
+  <h1 class="text-center">Lista productos</h1>
+</div>
+<div class=" row row-cols-3 gap-0 row-gap-3">
+  @for (item of data; track item){
+    <ng-container class="col-1">
+      <app-product [product]="item"/>
+    </ng-container>
+  }
+</div>
+<hr/>
+<app-form-product (LoadingData)="updateProducts($event)"/>
+

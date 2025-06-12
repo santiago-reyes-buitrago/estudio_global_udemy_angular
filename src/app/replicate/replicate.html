@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+  <div class="w-50">
+    <div class="mb-3">
+      <label for="inputTexto">
+        Escribe algo
+      </label>
+      <input id="inputTexto" type="text" (input)="handleChange($event)">
+    </div>
+    <div class="mb-3">
+      <label for="inputTexto2">
+        Texto replicado
+      </label>
+      <input id="inputTexto2" type="text" [value]="texto" readonly>
+    </div>
+  </div>
+</div>
