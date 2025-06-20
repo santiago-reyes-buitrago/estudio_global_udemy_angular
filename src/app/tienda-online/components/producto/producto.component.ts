@@ -20,7 +20,7 @@ export class ProductoComponent {
   ) {}
 
   editarProducto(){
-    this.router.navigate(['/producto/',this.llave]);
+    this.router.navigate(['tienda/editar/',this.llave]);
   }
 
 

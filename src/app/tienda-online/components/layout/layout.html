@@ -1,11 +1,18 @@
 <div class="container">
+  <h1 class="text-center">Main Content</h1>
+  <div class="">
+    @if (!isAuth()){
+      <a [routerLink]="['/tienda/login']" class="btn btn btn-outline-primary mx-2">Login</a>
+    } @else {
+      <a style="cursor: pointer" class="btn btn-outline-danger mx-2" (click)="logout()">Cerrar Sesion</a>
+    }
+  </div>
   <div class="row">
-    <div class="col-md-4">
-      <h2>Sidebar</h2>
-      <p>This takes up 4 columns.</p>
-    </div>
-    <div class="col-md-8">
-      <h1>Main Content</h1>
+<!--    <div class="col-md-4">-->
+<!--      <h2>Sidebar</h2>-->
+<!--      <p>This takes up 4 columns.</p>-->
+<!--    </div>-->
+    <div class="col-12">
       <router-outlet #o="outlet"></router-outlet>
       <p>This takes up 8 columns on medium and larger screens.</p>
     </div>

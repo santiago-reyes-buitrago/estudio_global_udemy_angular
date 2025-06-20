@@ -1,27 +1,32 @@
 import { Component } from '@angular/core';
 import {Producto} from '../../core/models/producto';
 import {ProductServiceData} from '../../core/services/data';
-import {Router} from '@angular/router';
-import {JsonPipe} from '@angular/common';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ProductoComponent} from '../producto/producto.component';
 
 @Component({
   selector: 'app-list-product',
   imports: [
-    JsonPipe
+    ProductoComponent,
   ],
   templateUrl: './list-product.html',
   styleUrl: './list-product.css'
 })
 export class ListProduct {
-  productos!: {[key: string]: Producto};
+  protected llaveProducto!: string;
+  protected productos!: {[key: string]: Producto};
+  protected description!:string;
+  protected price!:number;
 
   constructor(
     private productService:ProductServiceData,
     private router:Router,
+    private route:ActivatedRoute,
   ) {}
 
   ngOnInit() {
-    this.cargarProductos()
+    this.cargarProductos();
+
   }
 
   obtenerLlaves():string[]{
@@ -37,7 +42,7 @@ export class ListProduct {
     });
   }
   agregarProducto() {
-
+    this.router.navigate(['/tienda/agregar']);
   }
 
 }

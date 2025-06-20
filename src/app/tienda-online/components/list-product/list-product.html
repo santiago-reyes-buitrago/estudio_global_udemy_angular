@@ -7,8 +7,7 @@
   </div>
   <ul class="list-group w-50 mx-auto">
     @for (llave of obtenerLlaves(); track llave){
-
+      <app-producto [llave]="llave" [producto]="productos[llave]"/>
     }
   </ul>
 </div>
-{{productos | json}}
